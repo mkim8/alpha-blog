@@ -1,3 +1,9 @@
+  <table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
   <% obj.each do |article| %>
   <tr>
     <td>
@@ -16,3 +22,4 @@
     <td><%= link_to 'Delete', article_path(article), method: :delete, data:{confirm: "Are you sure"} %></td>
   </tr>
   <% end %>
+  </table>
