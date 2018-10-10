@@ -1,0 +1,17 @@
+<h1 align="center">Log In</h1>
+
+<%= form_for (:session) do |f| %>
+  <p>
+    <%= f.label :email %><BR/>
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter email", autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :password %><BR/>
+    <%= f.password_field :password, class: "form-control", autocomplete:"off" %>
+  </p>
+  <p>
+    <%= f.submit "Log in" %>
+  </p>
+<% end %>
+
+<%= link_to "Back to articles listening", articles_path %>
