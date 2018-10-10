@@ -1,0 +1,30 @@
+<h1 align="center">Signup for Alpha Blog</h1>
+
+<% if @user.errors.any?  %>
+  <h2>The following errors prevented the user from being created:</h2>
+  <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :username %><BR/>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email %><BR/>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><BR/>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to "Back to articles listening", articles_path %>

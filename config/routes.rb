@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   
   resources :articles
+  
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
