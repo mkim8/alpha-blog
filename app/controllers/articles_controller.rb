@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = User.current_user
     if @article.save
       # do soething
       flash[:notice] = "Article was successfully created"
