@@ -17,7 +17,9 @@
   </li>
 </UL>
 
+
 <% if logged_in? %>
+  Your Profile <%= "Admin" if current_user.admin? %>
   <%= link_to "Edit your profile", edit_user_path(current_user) %>
   <%= link_to "View your profile", user_path(current_user) %>
 <% end %>
