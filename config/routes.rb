@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  resources :categories, except: [:destroy]
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
