@@ -4,6 +4,15 @@
   </li>
 </UL>
 
+<ul>
+<li><%= link_to 'Categories', categories_path %></li>
+<% Category.all.each do |category| %>
+  <li><%= link_to "#{category.name}", category_path(category) %></li>
+<% end %>
+<% if logged_in? && current_user.admin? %>
+  <li><%= link_to "Create New Category", new_category_path %></li>
+<% end %>
+</ul>
 
 <% if logged_in? %>
   Your Profile <%= "Admin" if current_user.admin? %>
@@ -17,6 +26,8 @@
   | <%= link_to 'Log In', login_path%> |
   <%= link_to 'Sign up', signup_path%>
 <% end %>
+
+
 
 <%= debug(params) if Rails.env.development? %>
 
