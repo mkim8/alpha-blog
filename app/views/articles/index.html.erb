@@ -1,10 +1,8 @@
 <h1>Listing ALL Articles</h1>
 <div align="center">
   <%= will_paginate %>
-</div>
-<p><%= link_to "Create new article", new_article_path %></p>
-<%= render 'article', obj: @articles %>
-<div align="center">
+  <p><%= link_to "Create new article", new_article_path %></p>
+  <%= render 'article', obj: @articles %>
   <%= will_paginate %>
 </div>
 
