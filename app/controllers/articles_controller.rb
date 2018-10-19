@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
-    @article.user = User.current_user
+    @article.user = current_user
     if @article.save
       # do soething
       flash[:notice] = "Article was successfully created"
@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
     end
   
     def article_params
-      params.require(:article).permit(:title, :description)
+      params.require(:article).permit(:title, :description, category_ids: [])
     end
     
     def require_same_user
