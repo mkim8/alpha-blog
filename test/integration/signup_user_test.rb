@@ -29,5 +29,4 @@ class SignupUserTest < ActionDispatch::IntegrationTest
     assert_match "DescriptionDescription", response.body
     assert_match "Article was successfully created", response.body
   end
-
 end
